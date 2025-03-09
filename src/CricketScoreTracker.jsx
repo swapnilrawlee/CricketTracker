@@ -24,7 +24,7 @@ function Toss({ onTossComplete }) {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white flex flex-col  justify-center items-center rounded-lg shadow-md text-center">
+    <div className="max-w-md w-full h-full  mx-auto p-6 bg-white flex flex-col  justify-center items-center rounded-lg shadow-md text-center">
       <h2 className="text-xl font-bold text-gray-800">Enter Team Names</h2>
       <input
         type="text"
@@ -87,7 +87,7 @@ function Scoreboard({ battingTeam, score, extras, wickets, currentOver, overs, b
   const lastSixBalls = balls.slice(-6);
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md">
+    <div className="bg-white p-4 w-full  sm:w-auto rounded-lg shadow-md">
       <p className="text-lg font-semibold text-blue-600">Batting: {battingTeam}</p>
       <p className="text-lg font-semibold text-gray-800">Total Runs: {score} (Extras: {extras})</p>
       <p className="text-lg font-semibold text-red-600">Wickets: {wickets} / 10</p>
@@ -99,7 +99,7 @@ function Scoreboard({ battingTeam, score, extras, wickets, currentOver, overs, b
 
 function BallTracker({ onBallClick }) {
   return (
-    <div className="grid grid-cols-4 gap-2 p-4 bg-white rounded-lg shadow-md">
+    <div className="grid w-full sm:w-auto grid-cols-4 gap-2 p-4 bg-white rounded-lg shadow-md">
       {[0, 1, 2, 3, 4, 6, "W", "WD", "NB", "LB"].map((run) => (
         <button
           key={run}
@@ -310,7 +310,7 @@ export default function CricketScoreTracker() {
     }
   };
   return (
-    <div className="max-w-2xl mx-auto min-h-screen  p-6 bg-gray-100 justify-center items-center rounded-lg shadow-md flex flex-col gap-4">
+    <div className="max-w-2xl mx-auto min-h-screen    p-6 bg-gray-100 justify-center items-center rounded-lg shadow-md flex flex-col gap-4">
       {!gameStarted ? (
         <Toss onTossComplete={startGame} />
       ) : (
